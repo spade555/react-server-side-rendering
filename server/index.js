@@ -3,6 +3,8 @@ import express from 'express';
 
 const app = new express();
 
+app.use(express.static('dist'));
+
 app.get('/', async (_req, res) => {
   res.send(
     `<h2>Hello World!</h2>`
