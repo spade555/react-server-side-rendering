@@ -12,6 +12,19 @@ fetch("http://localhost:5555/data")
     render();
   });
 
+const handleModifyAnswerVotes = (answerId, increment) => {
+  state.answers = state.answers.map(answer => {
+    if (answer.answerId != answerId) {
+      return answer;
+    }
+    else {
+      return {...answer, upvotes: answer.upvotes + increment}
+    }
+  });
+
+  render();
+}
+
 const render = () => {
-  ReactDOM.hydrate(<App {...state} />, document.querySelector("#Container"));
+  ReactDOM.hydrate(<App {...state} handleModifyAnswerVotes={handleModifyAnswerVotes} />, document.querySelector("#Container"));
 }
