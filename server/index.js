@@ -64,8 +64,8 @@ app.get("/vote/:answerId", (req, res) => {
 
 app.get('/', async (_req, res) => {
   const index = readFileSync('public/index.html', 'utf8');
-  const rendered = renderToString(<App {...data} />);
-  res.send(index.replace("{{rendered}}", "Rendered on Server: " + rendered));
+  const rendered = renderToString(<App {...data}/>);
+  res.send(index.replace("{{rendered}}", rendered));
 });
 
 app.listen(5555);

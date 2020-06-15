@@ -20,5 +20,5 @@ const handleVote = (answerId, increment) => {
 }
 
 const render = () => {
-  ReactDOM.hydrate(<App {...state} handleModifyAnswerVotes={handleVote} />, document.querySelector("#Container"));
+  ReactDOM.hydrate(<App {...state} handleModifyAnswerVotes={handleVote}/>, document.querySelector("#Container"));
 }
