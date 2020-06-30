@@ -49,6 +49,7 @@ const data = {
 };
 
 const app = new express();
+const port = process.env.PORT || 5555;
 
 app.use(express.static('dist'));
 
@@ -68,5 +69,5 @@ app.get('/', async (_req, res) => {
   res.send(index.replace("{{rendered}}", rendered));
 });
 
-app.listen(5555);
-console.log('Server is listening on 5555');
+app.listen(port);
+console.log(`Server is listening on ${port}`);
